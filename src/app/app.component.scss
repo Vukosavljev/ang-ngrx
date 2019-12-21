@@ -1,6 +1,23 @@
-.example-container {
-  background-color: blue;
+.sidenav-container {
+  background-color: pink;
   width: 100%;
   height: 100%;
   border: 1px solid #555;
+}
+
+/*left sidenav style override*/
+mat-sidenav:not(.mat-drawer-opened) {
+  // overflow: hidden;
+  transform: translate(0, 0);
+  visibility: visible !important;
+  width: 60px !important;
+  span {
+    display: none !important;
+  }
+}
+
+mat-sidenav:not(.mat-drawer-opened) ~ mat-sidenav-content.sidenav-content {
+  // background-color: yellow !important;
+  transition: 0.4s;
+  padding-left: 60px;
 }
