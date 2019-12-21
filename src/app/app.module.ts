@@ -7,6 +7,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +18,14 @@ import { AppComponent } from "./app.component";
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,7 @@ mat-sidenav:not(.mat-drawer-opened) {
   transform: translate(0, 0);
   visibility: visible !important;
   width: 60px !important;
+  transition: 0.4s;
   span {
     display: none !important;
   }
