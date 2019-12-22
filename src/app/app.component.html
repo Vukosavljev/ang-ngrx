@@ -1,23 +1,20 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    mode="side"
-    [opened]="sidenavState$ | async"
-    [@navigaionAnimation]="animationState"
-  >
+  <mat-sidenav mode="side" [opened]="sidenavState$ | async">
+    <!-- [@navigaionAnimation]="animationState" -->
     <div class="navigaion-row">
-      <span>navTitle1</span>
+      <span [@navTitle]="animationState">navTitle1</span>
       <mat-icon aria-hidden="false" aria-label="Example home icon"
         >home</mat-icon
       >
     </div>
     <div class="navitaion-row">
-      <span>Home</span>
+      <span [@navTitle]="animationState">Home</span>
       <mat-icon aria-hidden="false" aria-label="Example home icon"
         >home</mat-icon
       >
     </div>
     <div class="navitaion-row">
-      <span>navitaonnnn</span>
+      <span [@navTitle]="animationState">navitaonnnn</span>
       <mat-icon aria-hidden="false" aria-label="Example home icon"
         >home</mat-icon
       >

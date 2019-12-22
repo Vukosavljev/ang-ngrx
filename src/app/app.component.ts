@@ -19,25 +19,30 @@ import { selectSidenav } from "./store/selector";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   animations: [
-    trigger("navigaionAnimation", [
-      state(
-        "closed",
-        style({
-          backgroundColor: "yellow"
-        })
-      ),
-      state(
-        "open",
-        style({
-          backgroundColor: "red"
-        })
-      ),
-      transition("closed <=> open", animate(400))
+    // trigger("navigaionAnimation", [
+    //   state(
+    //     "closed",
+    //     style({
+    //       backgroundColor: "yellow"
+    //     })
+    //   ),
+    //   state(
+    //     "open",
+    //     style({
+    //       backgroundColor: "red"
+    //     })
+    //   ),
+    //   transition("closed <=> open", animate(400))
+    // ]),
+    trigger("navTitle", [
+      state("closed", style({ display: "none" })),
+      state("open", style({ display: "block" })),
+      transition("closed <=> open", animate(1000))
     ])
   ]
 })
 export class AppComponent implements OnInit {
-  animationState = "closed";
+  animationState = "open";
   sidenavState$: Observable<boolean>;
 
   constructor(private store: Store<AppState>) {
@@ -48,6 +53,9 @@ export class AppComponent implements OnInit {
 
   toggleSidenav() {
     this.store.dispatch(toggleSidenav());
+    this.animationState === "open"
+      ? (this.animationState = "closed")
+      : (this.animationState = "open");
   }
 
   animateSidenav() {
