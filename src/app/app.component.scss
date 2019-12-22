@@ -12,13 +12,23 @@ mat-sidenav:not(.mat-drawer-opened) {
   visibility: visible !important;
   width: 60px !important;
   transition: 0.4s;
-  span {
-    display: none !important;
+
+  .navitaion-row {
+    width: 100%;
+
+    span {
+      display: none !important;
+    }
   }
 }
 
 mat-sidenav:not(.mat-drawer-opened) ~ mat-sidenav-content.sidenav-content {
-  // background-color: yellow !important;
   transition: 0.4s;
   padding-left: 60px;
+}
+
+.navigaion-row {
+  &:hover {
+    background-color: #eee;
+  }
 }
