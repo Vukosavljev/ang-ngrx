@@ -1,0 +1,22 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+  <label
+    >Project Name:
+    <input type="text" formControlName="projectName" />
+  </label>
+  <label
+    >Project mail:
+    <input type="email" formControlName="mail" />
+  </label>
+  <label
+    >Project status:
+    <select formControlName="projectStatus">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </label>
+
+  <button [disabled]="projectForm.status === 'INVALID'" type="submit">
+    SUBMIT
+  </button>
+</form>

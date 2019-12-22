@@ -1,11 +1,14 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" [opened]="sidenanState" #sidenav>
+  <mat-sidenav mode="side" [opened]="sidenavState$ | async">
     <span>Sidenav conten</span>
     <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <h1>lorem text</h1>
-    <button (click)="sidenav.toggle()">{{ "toggle" | uppercase }}</button>
+    <button mat-button (click)="toggleSidenav()">
+      {{ "toggle" | uppercase }}
+    </button>
+    {{ sidenavState$.isOpen | async }}
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius atque
@@ -72,51 +75,6 @@
       expedita commodi est ipsam impedit! Sint doloribus molestiae veritatis
       nisi laboriosam dolorum enim iste ipsum magnam hic sapiente cumque
       repellat, ratione repudiandae quod temporibus praesentium necessitatibus
-      inventore totam tenetur cupiditate velit tempora. Ducimus, in rem.
-      Quibusdam ad fugiat obcaecati delectus reprehenderit! Enim consectetur
-      soluta dolores iure aliquid in culpa. Impedit, deserunt id est modi
-      dignissimos excepturi laboriosam soluta recusandae sit exercitationem?
-      Eveniet reiciendis inventore earum. Laudantium aut aliquam reiciendis ab
-      dicta corporis amet ea itaque fugit provident commodi qui necessitatibus
-      aspernatur ad atque, non quam, id exercitationem delectus tenetur nemo
-      quo. Repudiandae minus error quia? Minus, quam alias temporibus
-      reprehenderit, harum excepturi, blanditiis architecto repudiandae est
-      magni et suscipit aspernatur modi voluptatibus officiis id nam? Quia
-      officia hic corporis ad, dignissimos fugiat reiciendis voluptate possimus.
-      Laudantium, commodi non. Aliquid esse sed dolor sunt voluptates, aut
-      laboriosam iste natus at nam eveniet, quia rerum saepe cum suscipit
-      debitis? Eos, porro delectus? Iure, tempore provident? Eum, ut! Fugiat
-      sunt quis consectetur autem cum impedit ducimus aliquam error at, aut
-      itaque hic obcaecati reprehenderit necessitatibus corrupti aspernatur
-      quaerat culpa sapiente. Recusandae earum nobis numquam repellendus
-      perferendis aliquid explicabo? Voluptas, repudiandae, accusantium sapiente
-      temporibus nam officia, praesentium aliquam dicta adipisci quaerat ipsa
-      ut? Laborum laudantium, fuga labore accusantium nostrum at ea sapiente
-      ipsam fugiat voluptates nesciunt illo eveniet veritatis. Molestias iusto
-      hic dignissimos dolores deleniti iste animi inventore fugit. Accusantium
-      recusandae, commodi nihil sunt quidem cupiditate laudantium veniam laborum
-      corporis repudiandae fugit voluptate esse, expedita, omnis atque sed qui.
-      Officiis facilis nesciunt, quibusdam itaque temporibus amet blanditiis
-      aliquam maxime, officia, dolorum a. Cum animi voluptatem sit, praesentium
-      nihil dolore deleniti, eligendi illum, commodi quaerat dicta numquam.
-      Delectus, omnis alias. Id in suscipit, quibusdam amet praesentium ullam!
-      Sed quae eos excepturi optio iste est repellat libero maiores, dolore
-      ullam at, voluptatibus aliquam voluptas veritatis atque magni sunt ad.
-      Nemo, placeat. Reiciendis eligendi ducimus quia sapiente adipisci! Nisi,
-      fugiat. Sunt nemo rerum libero, voluptate aliquid quas fugit placeat earum
-      quidem molestias maiores non eaque harum delectus mollitia aperiam, magni
-      voluptatibus nam! Tenetur aspernatur quas minima iste. Repellat doloribus
-      aspernatur ad sint qui eos fugit ipsa eligendi tenetur vitae et commodi
-      eum quam, accusamus, voluptas ullam officia voluptatem voluptate magni?
-      Fugit, repellat! Totam quo repellendus, possimus quia ratione dolore id
-      harum non sit? At ratione ab animi eligendi aperiam tempore optio ea,
-      facilis ipsum quae quidem maiores ut iusto mollitia, nisi earum? Molestias
-      maxime, omnis tempore ut iure et illum nesciunt vitae. Veniam nisi saepe
-      numquam? Ea sit velit corrupti, deserunt, ullam fugit expedita culpa
-      doloribus, quae nesciunt odio incidunt omnis fuga. Eligendi reiciendis
-      modi odio asperiores quibusdam ullam placeat blanditiis aspernatur
-      repellendus! Distinctio, labore sequi aperiam, autem corrupti, eveniet
-      ratione enim consequuntur quaerat eos tempora totam incidunt cum
       exercitationem culpa dicta! Qui impedit aut, sint consequatur possimus sed
       reiciendis, veritatis voluptatum iusto recusandae culpa quis nemo
       laudantium sunt voluptatem hic accusamus dolorum incidunt atque quia iure
@@ -168,6 +126,7 @@
       mollitia recusandae ipsam nam itaque unde est animi laborum ipsum suscipit
       sed fugiat, repudiandae rem delectus maxime nulla! Quia omnis vel, alias
       expedita minima praesentium repellendus quisquam.
+      <app-project-form></app-project-form>
     </p>
   </mat-sidenav-content>
 </mat-sidenav-container>
