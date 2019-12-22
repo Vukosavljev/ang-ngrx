@@ -1,12 +1,35 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" [opened]="sidenavState$ | async">
-    <span>Sidenav conten</span>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+  <mat-sidenav
+    mode="side"
+    [opened]="sidenavState$ | async"
+    [@navigaionAnimation]="animationState"
+  >
+    <div class="navigaion-row">
+      <span>navTitle1</span>
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >home</mat-icon
+      >
+    </div>
+    <div class="navitaion-row">
+      <span>Home</span>
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >home</mat-icon
+      >
+    </div>
+    <div class="navitaion-row">
+      <span>navitaonnnn</span>
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >home</mat-icon
+      >
+    </div>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <h1>lorem text</h1>
     <button mat-button (click)="toggleSidenav()">
       {{ "toggle" | uppercase }}
+    </button>
+    <button mat-button (click)="animateSidenav()">
+      {{ "animate" | uppercase }}
     </button>
     {{ sidenavState$.isOpen | async }}
 
